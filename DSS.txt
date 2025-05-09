@@ -42,7 +42,8 @@ Buildings
 	req:(4power)
 *panelLine
 	name:Solar Panel Assembler
-	desc:An assembly line for solar panels. Costs 5 watts of power a second.
+	desc:An assembly line for solar panels. Costs 5 watts of power a second, alongside the building cost of a solar panel.
 	cost:15 iron
-	on tick:if (power >= 5) yield 1 solarPanel
+	on tick:if (power >= 5 and iron >= 1) yield 1 solarPanel
 	on tick:lose 5 power
+	on tick:lose 1 iron
