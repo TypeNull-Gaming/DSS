@@ -47,3 +47,4 @@ Buildings
 	on tick:if (power >= 5 and iron >= 1) yield 1 solarPanel
 	on tick:lose 5 power
 	on tick:lose 1 iron
+	req:(4power)
