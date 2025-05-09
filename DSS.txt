@@ -25,5 +25,5 @@ Buildings
 *solarPanel
 	name: Solar Panel
     desc: A small solar panel, ready to make power orbiting a star. Makes 1 watt of power per second.
-    on tick:give 1 power
+    on tick:yield 1 power
     cost: 3 iron
