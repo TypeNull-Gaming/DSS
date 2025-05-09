@@ -40,3 +40,9 @@ Buildings
 	on tick:if (power >= 2) yield 1 iron
 	on tick:lose 2 power
 	req:(4power)
+*panelLine
+	name:Solar Panel Assembler
+	desc:An assembly line for solar panels. Costs 5 watts of power a second.
+	cost:15 iron
+	on tick:if (power >= 5) yield 1 solarPanel
+	on tick:lose 5 power
