@@ -1,0 +1,28 @@
+Let's make a game!
+	name: Dyson Sphere Simulator
+	by: TypeNull
+	desc: A game about taking over a galaxy with Dyson spheres.
+	created: 5/8/2025
+	version: 0.5
+
+Settings
+	building cost increase: 100%
+
+// Resources
+*iron
+	name: Iron
+	desc: Iron, the basis of technology. Right?
+*power
+	name: Power
+    desc: The very lifeblood of electronics.
+
+*mine
+	name: Mine
+	desc: Pulling up your sleeves, and getting iron yourself. Gives 1 iron per click.
+	on click: yield 1 iron
+// Basic Buildings
+*solarPanel
+	name: Solar Panel
+    desc: A small solar panel, ready to make power orbiting a star. Makes 1 watt of power per second.
+    on tick: yield 1 power
+    cost: 3 iron
