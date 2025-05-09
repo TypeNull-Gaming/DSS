@@ -15,11 +15,12 @@ Resources
 *power
 	name: Power
     desc: The very lifeblood of electronics.
-
+Buttons
 *mine
 	name: Mine
 	desc: Pulling up your sleeves, and getting iron yourself. Gives 1 iron per click.
 	on click: yield 1 iron
+Buildings
 // Basic Buildings
 *solarPanel
 	name: Solar Panel
