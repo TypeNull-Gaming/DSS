@@ -8,6 +8,12 @@ Let's make a game!
 Settings
 	building cost increase: 100%
 
+Achievements
+*4power
+	name:Spark
+	req:4 power:ps
+	desc:A small spark in this vast world.
+
 Resources
 *iron
 	name:Iron
@@ -33,4 +39,4 @@ Buildings
 	cost:6 iron
 	on tick:if (power >= 2) yield 1 iron
 	on tick:lose 2 power
-	req:4 power per second
+	req:(4power)
