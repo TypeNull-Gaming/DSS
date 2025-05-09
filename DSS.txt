@@ -32,5 +32,5 @@ Buildings
 	desc:A drone, which can mine for you. Takes 2 watts of power a second to run, though!
 	cost:6 iron
 	on tick:if (power >= 2) yield 1 iron
-	on tick:(power - 2)
+	on tick:lose 2 power
 	req:4 power per second
