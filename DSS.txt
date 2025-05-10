@@ -61,7 +61,7 @@ Buildings
 	req:(4power)
 *botLine
 	name:Mining Bot Assembler
-	desc:<q>"Mark III mining bots. Designed by me, built by me, and you'd best hope not on your land."<q/> The Architecht
+	desc:<q>"Mark III mining bots. Designed by me, built by me, and you'd best hope not on your land."</q> The Architecht
 	req:botLines
 	cost:100 iron, 50 copper
 	on tick:if (power >= 200 and iron >= 6) yield 1 miningBot
