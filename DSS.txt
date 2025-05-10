@@ -177,7 +177,6 @@ Upgrades
 	desc:Time to have a long and hard think. Where can I go from here? Is there even any point? Can I make my research better? The answer, as usual, is <b>yes.</b>
 	req:3000 research
 	cost:5000 research
-	on earn: multiply yield of tag:researching by 2
 *energyCondensing
 	name:Energy Condensing
 	desc:This might do the trick! It can take your measly litle watts and turn them into GIGAwatts, a billion times more powerful!
