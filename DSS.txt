@@ -117,8 +117,10 @@ Buildings
 *researcher
 	name:Researcher
 	desc:Power goes in, research comes out. How? Dunno, probably the turbo-encabulator. Costs 100 watts a second.
-	on tick:if (power >= 100) yield 1 research
-	on tick:lose 100 power
+	on tick:
+		if (power >= 100) yield 1 research
+		lose 100 power
+	end
 	req:(1mPanels)
 	cost:500 iron
 	tag:researching
