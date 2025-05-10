@@ -94,7 +94,7 @@ Buildings
 	name:Panel Clump
 	desc:An efficient little clump of solar panels. These cannot be bought.
 	on tick:yield 500 power
-	cost:1 iron
+	no buy
 	req:(panelClumping)
 *panelClumper
 	name:Panel Clumper
@@ -111,6 +111,7 @@ Upgrades
 	desc:You have a lot of solar panels, don't you? Well, this will unlock panel clumpers, a type of drone which can do just that! And, it makes them twice ass efficient in the process!
 	req:100 research
 	cost:250 research
+	on earn:yield 1 panelClump
 *copperMining
 	name:Copper Mining
 	desc:Yeah, we found this "copper" stuff. Might be useful.
