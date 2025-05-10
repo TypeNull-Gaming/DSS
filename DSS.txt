@@ -32,6 +32,13 @@ Resources
 	name:Copper
 	desc:Copper. Might be useful, somehow.
 	req:copperMining
+*silicon
+	name:Silicon
+	desc:Silicon, the funny stuff computer boards are made of. How exactly did you get this far without it?
+	req:siliconMining
+*gigawatt
+	name:Gigawatts
+	desc:Each one is one BILLION watts! Isn't that wild?
 Buttons
 *mine
 	name:Mine
@@ -81,6 +88,30 @@ Buildings
 	on tick:lose 15 iron
 	req:(botLines)
 	cost:300 iron
+//Silicon
+*siliconMiner
+	name:Silicon Miner
+	desc:The bots won't cut it with this one. Plus, you need some way to refine it.
+	cost:200 iron, 150 copper
+	req:siliconMining
+*minerMaker
+	name:Miner Assembly Line
+	desc:<q>"Pootis miner here!"</q> Medium Munitions Man
+	cost:1000 iron, 600 copper, 15 silicon
+	req:siliconMining
+	on tick:
+		if (power >= 5000 and iron >= 200 and copper >= 150) yield 1 siliconMiner
+		lose 5000 power
+		lose 200 iron
+		lose 150 copper
+	end
+//Gigawatts
+*gigawattMaker
+	name:Gigawatt Capacitor
+	desc:<q>"UNLIMITED POWAAAAAAH!"</q> The Senate
+	on tick:
+		if (power >= 1000000000) yield 1 gigawatt
+		lose 1000000000 power
 //Research
 *researcher
 	name:Researcher
@@ -89,6 +120,14 @@ Buildings
 	on tick:lose 100 power
 	req:(1mPanels)
 	cost:500 iron
+	tag:researching
+*supercomputer
+	name:Supercomputer
+	desc:After having a long think, you figure out the plans for a supercomputer! It can research a hundred times faster than your previous method! [?(have energyCondensing)|But, it seems you can power it now!|However, it seems to want an odd energy source, that you can't provide right now. Further research is needed.]
+	on tick:if (gigawatt >= 10) yield 100 research
+	cost:1500 iron, 900 copper, 100 silicon
+	req:moreBrainpower
+	tag:researching
 //Sphere Forming
 *panelClump
 	name:Panel Clump
@@ -122,3 +161,21 @@ Upgrades
 	desc:Finally, automated assembly for mining bots!
 	req:1000 research
 	cost:1500 research
+*siliconMining
+	name:Silicon Mining
+	desc:The brainpower to finally go to a beach and melt down some sand.
+	req:2000 research
+	cost:2500 research
+*moreBrainpower
+	name:More Brainpower
+	desc:Time to have a long and hard think. Where can I go from here? Is there even any point? Can I make my research better? The answer, as usual, is <b>yes.</b>
+	req:3000 research
+	cost:5000 research
+	passive: multiply yield of tag:researching by 2
+*energyCondensing
+	name:Energy Condensing
+	desc:This might do the trick! It can take your measly litle watts and turn them into GIGAwatts, a billion times more powerful!
+	req:moreBrainpower, 6000 research
+	cost:8000 research
+
+	
