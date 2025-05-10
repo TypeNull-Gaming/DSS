@@ -114,6 +114,7 @@ Buildings
 		lose 1000000000 power
 	end
 	cost:900 iron, 900 copper, 900 silicon
+	req:energyCondensing
 //Research
 *researcher
 	name:Researcher
