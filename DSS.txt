@@ -90,6 +90,12 @@ Buildings
 	req:(1mPanels)
 	cost:500 iron
 //Sphere Forming
+*panelClump
+	name:Panel Clump
+	desc:An efficient little clump of solar panels. These cannot be bought.
+	on tick:yield 500 power
+	no buy
+	req:(panelClumping)
 *panelClumper
 	name:Panel Clumper
 	desc:A handy little drone, that can fuse together solar panels. Aint that nice? Costs 200 watts a second.
@@ -98,12 +104,7 @@ Buildings
 	on tick:lose 250 solarPanel
 	req:(panelClumping)
 	cost:800 iron
-*panelClump
-	name:Panel Clump
-	desc:An efficient little clump of solar panels. These cannot be bought.
-	on tick:yield 500 power
-	no buy
-	req:(panelClumping)
+
 Upgrades
 *panelClumping
 	name:Panel Clumping
