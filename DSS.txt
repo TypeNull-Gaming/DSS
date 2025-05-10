@@ -3,7 +3,7 @@ Let's make a game!
 	by: TypeNull
 	desc: A game about taking over a galaxy with Dyson spheres.
 	created: 5/8/2025
-	version:0.5
+	version:0.6
 
 Settings
 	building cost increase: 100%
@@ -28,6 +28,10 @@ Resources
 	name:Research
 	desc:Little MacGuffins that help you learn stuff.
 	req:(1mPanels)
+*copper
+	name:Copper
+	desc:Copper. Might be useful, somehow.
+	req:copperMining
 Buttons
 *mine
 	name:Mine
@@ -55,6 +59,27 @@ Buildings
 	on tick:lose 5 power
 	on tick:lose 3 iron
 	req:(4power)
+*botLine
+	name:Mining Bot Assembler
+	desc:<q>"Mark III mining bots. Designed by me, built by me, and you'd best hope not on your land."<q/> The Architecht
+	req:botLines
+	cost:100 iron, 50 copper
+	on tick:if (power >= 200 and iron >= 6) yield 1 miningBot
+//Copper
+*copperBot
+	name:Copper Bot
+	desc:We can re-use the bots we already have for this! They're a little banged up by now, though...
+	req:copperMining
+	cost:15 iron
+	on tick:if (power >=5) yield 1 copper
+	on tick:lose 5 power
+*botConverter
+	name:Bot Converter
+	desc:A machine for automatically converting iron miners into copper miners.
+	on tick:if (power >= 20 and iron >= 15) yield 1 copperBot
+	on tick:lose 20 power
+	on tick:lose 15 iron
+	req:(botLines)
 //Research
 *researcher
 	name:Researcher
@@ -71,6 +96,7 @@ Buildings
 	on tick:lose 200 power
 	on tick:lose 250 solarPanel
 	req:(panelClumping)
+	cost:800 iron
 *panelClump
 	name:Panel Clump
 	desc:An efficient little clump of solar panels. These cannot be bought.
@@ -83,3 +109,13 @@ Upgrades
 	desc:You have a lot of solar panels, don't you? Well, this will unlock panel clumpers, a type of drone which can do just that! And, it makes them twice ass efficient in the process!
 	req:100 research
 	cost:250 research
+*copperMining
+	name:Copper Mining
+	desc:Yeah, we found this "copper" stuff. Might be useful.
+	req:500 research
+	cost:1000 research
+*botLines
+	name:Bot Assembly
+	desc:Finally, automated assembly for mining bots!
+	req:1000 research
+	cost:1500 research
