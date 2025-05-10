@@ -99,6 +99,10 @@ Buildings
 	desc:The bots won't cut it with this one. Plus, you need some way to refine it.
 	cost:200 iron, 150 copper
 	req:siliconMining
+	on tick:
+		if (power >= 500) yield 1 silicon
+		lose 500 power
+	end
 *minerMaker
 	name:Miner Assembly Line
 	desc:<q>"Pootis miner here!"</q> Medium Munitions Man
