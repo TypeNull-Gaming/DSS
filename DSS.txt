@@ -80,6 +80,7 @@ Buildings
 	on tick:lose 20 power
 	on tick:lose 15 iron
 	req:(botLines)
+	cost:300 iron
 //Research
 *researcher
 	name:Researcher
