@@ -96,7 +96,6 @@ Buildings
 	on tick:yield 500 power
 	no buy
 	cost:1 iron
-	costs:hide
 	req:(panelClumping)
 *panelClumper
 	name:Panel Clumper
