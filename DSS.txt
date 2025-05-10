@@ -176,7 +176,7 @@ Upgrades
 	desc:The brainpower to finally go to a beach and melt down some sand.
 	req:2000 research
 	cost:2500 research
-	on earn:give 1 silicon
+	on earn:yield 1 silicon
 *moreBrainpower
 	name:More Brainpower
 	desc:Time to have a long and hard think. Where can I go from here? Is there even any point? Can I make my research better? The answer, as usual, is <b>yes.</b>
@@ -187,5 +187,6 @@ Upgrades
 	desc:This might do the trick! It can take your measly litle watts and turn them into GIGAwatts, a billion times more powerful!
 	req:moreBrainpower, 6000 research
 	cost:8000 research
+	on earn:yield 1 gigawatt
 
 	
