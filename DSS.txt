@@ -62,6 +62,7 @@ Buildings
 	on tick:if (power >= 100) yield 1 research
 	on tick:lose 100 power
 	req:(1mPanels)
+	cost:500 iron
 //Sphere Forming
 *panelClumper
 	name:Panel Clumper
