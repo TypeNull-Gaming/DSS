@@ -16,7 +16,7 @@ Achievements
 *1mPanels
 	name:One MILLION panels
 	desc:One million panels? In this economy? It's more likely than you think.
-
+	req:1000000 solarPanel
 Resources
 *iron
 	name:Iron
