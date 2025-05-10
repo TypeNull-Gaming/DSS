@@ -94,17 +94,17 @@ Buildings
 	name:Panel Clump
 	desc:An efficient little clump of solar panels. These cannot be bought.
 	on tick:yield 500 power
-	no click
+	no buy
 	req:(panelClumping)
 *panelClumper
 	name:Panel Clumper
 	desc:A handy little drone, that can fuse together solar panels. Aint that nice? Costs 200 watts a second.
-	on tick:if (power >= 200) yield 1 panelClump
+	on tick:if (power >= 200 and solarPanel >= 250) yield 1 panelClump
 	on tick:lose 200 power
 	on tick:lose 250 solarPanel
 	req:(panelClumping)
 	cost:800 iron
-//and solarPanel >= 250
+
 Upgrades
 *panelClumping
 	name:Panel Clumping
