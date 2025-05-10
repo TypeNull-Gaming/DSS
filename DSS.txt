@@ -94,7 +94,6 @@ Buildings
 	name:Panel Clump
 	desc:An efficient little clump of solar panels. These cannot be bought.
 	on tick:yield 500 power
-	no buy
 	cost:1 iron
 	req:(panelClumping)
 *panelClumper
