@@ -112,6 +112,7 @@ Buildings
 	on tick:
 		if (power >= 1000000000) yield 1 gigawatt
 		lose 1000000000 power
+	end
 	cost:900 iron, 900 copper, 900 silicon
 //Research
 *researcher
