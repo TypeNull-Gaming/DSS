@@ -24,6 +24,10 @@ Resources
 *power
 	name:Power
 	desc:The very lifeblood of electronics.
+*research
+	name:Research
+	desc:Little MacGuffins that help you learn stuff.
+	req:(1mPanels)
 Buttons
 *mine
 	name:Mine
