@@ -13,6 +13,9 @@ Achievements
 	name:Spark
 	req:4 power:ps
 	desc:A small spark in this vast world.
+*1mPanels
+	name:One MILLION panels
+	desc:One million panels? In this economy? It's more likely than you think.
 
 Resources
 *iron
@@ -48,3 +51,30 @@ Buildings
 	on tick:lose 5 power
 	on tick:lose 3 iron
 	req:(4power)
+//Research
+*researcher
+	name:Researcher
+	desc:Power goes in, research comes out. How? Dunno, probably the turbo-encabulator. Costs 100 watts a second.
+	on tick:if (power >= 100) yield 1 research
+	on tick:lose 100 power
+	req:(1mPanels)
+//Sphere Forming
+*panelClumper
+	name:Panel Clumper
+	desc:A handy little drone, that can fuse together solar panels. Aint that nice? Costs 200 watts a second.
+	on tick:if (power >= 200 and solarPanel >= 250) yield 1 panelClump
+	on tick:lose 200 power
+	on tick:lose 250 solarPanel
+	req:(panelClumping)
+*panelClump
+	name:Panel Clump
+	desc:An efficient little clump of solar panels. These cannot be bought.
+	on tick:yield 500 power
+	no buy
+	req:(panelClumping)
+Upgrades
+*panelClumping
+	name:Panel Clumping
+	desc:You have a lot of solar panels, don't you? Well, this will unlock panel clumpers, a type of drone which can do just that! And, it makes them twice ass efficient in the process!
+	req:100 research
+	cost:250 research
