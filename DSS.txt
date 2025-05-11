@@ -3,7 +3,7 @@ Let's make a game!
 	by: TypeNull
 	desc: A game about taking over a galaxy with Dyson spheres.
 	created: 5/8/2025
-	version:0.6
+	version:0.7
 
 Settings
 	building cost increase: 100%
@@ -90,9 +90,10 @@ Buildings
 *botConverter
 	name:Bot Converter
 	desc:A machine for automatically converting iron miners into copper miners.
-	on tick:if (power >= 20 and iron >= 15) yield 1 copperBot
+	on tick:if (power >= 20 and iron >= 15 and miningBot >= 1) yield 1 copperBot
 	on tick:lose 20 power
 	on tick:lose 15 iron
+	on tick:lose 1 miningBot
 	req:(botLines)
 	cost:300 iron
 //Silicon
@@ -115,6 +116,48 @@ Buildings
 		lose 5000 power
 		lose 200 iron
 		lose 150 copper
+	end
+//Automation
+*panelLineLine
+	name:Solar Panel Assembler Assembler
+	desc:Woah, an assembly line for assembly lines? Kinda trippy.
+	on tick:
+		if (gigawatt >= 15 and iron >= 3) yield 1 panelLine
+		lose 15 gigawatt
+		lose 3 iron
+	end
+	cost:9001 iron, 2500 copper, 300 silicon
+	req:automation
+
+*botLineLine
+	name:Mining Bot Assembler Assembler
+	desc:<q>"Holy crap, Louis! Automation beyond mortal comprehension!"</q> James Dragon
+	on tick:
+		if (gigawatt >= 5 and iron >= 100 and copper >= 50) yield 1 botLine
+		lose 5 gigawatt
+		lose 100 iron
+		lose 50 copper
+	end
+	cost:300 iron, 150 copper, 200 silicon
+	req:automation
+
+*converterMaker
+	name:Bot Converter Assembler
+	desc:An assembly line for bot converters. Hey, isn't everything a converter when you think about it? just taking stuff and turning it into other stuff.
+	on tick:
+		if (gigawatt >= 20 and iron >= 300) yield 1 botConverter
+		lose 20 gigawatt
+		lose 300 iron
+	end
+	cost:6000 iron, 2000 copper, 500 silicon
+	req:automation
+*clumperMaker
+	name:Panel Clumper Assembler
+	desc:These can make those handy little drones that clump panels together.
+	on tick:
+		if (gigawatt >= 5 and iron >= 800) yield 1 panelClumper
+		lose 5 gigawatt
+		lose 800 iron
 	end
 //Gigawatts
 *gigawattMaker
@@ -194,5 +237,10 @@ Upgrades
 	req:moreBrainpower, 6000 research
 	cost:8000 research
 	on earn:yield 1 gigawatt
+*automation
+	name:Automation
+	desc:The possibility of full automation, all right here. Can you handle the sheer efficiency?
+	req:9000 research
+	cost:11000 research
 
 	
