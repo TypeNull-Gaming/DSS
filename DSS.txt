@@ -159,6 +159,7 @@ Buildings
 		lose 5 gigawatt
 		lose 800 iron
 	end
+	cost:2500 iron, 3000 copper, 500 silicon
 //Gigawatts
 *gigawattMaker
 	name:Gigawatt Capacitor
