@@ -216,6 +216,7 @@ Buildings
 	desc:It's a clump, but larger. Yeah, you also can't buy these.
 	on tick:yield 1000000 power
 	req:(panelClumping)
+	no buy
 Upgrades
 *panelClumping
 	name:Panel Clumping
@@ -223,6 +224,7 @@ Upgrades
 	req:100 research
 	cost:250 research
 	on earn:yield 1 panelClump
+	on earn:yield 1 largeClump
 *copperMining
 	name:Copper Mining
 	desc:Yeah, we found this "copper" stuff. Might be useful.
