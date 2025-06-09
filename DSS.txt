@@ -3,7 +3,7 @@ Let's make a game!
 	by: TypeNull
 	desc: A game about taking over a galaxy with Dyson spheres.
 	created: 5/8/2025
-	version:0.7
+	version:0.75
 
 Settings
 	building cost increase: 100%
@@ -203,7 +203,19 @@ Buildings
 	on tick:lose 250 solarPanel
 	req:(panelClumping)
 	cost:800 iron
-
+*largeClumper
+	name:Reclumper
+	desc:A newly devised, upgraded version of the Panel Clumper. Instead of clumping solar panels into clumps, it takes those clumps and, uh... reclumps them. I-it makes them bigger and better.
+	on tick:if (power >= 1000 and panelClump >= 1000) yield 1 largeClump
+	on tick:lose 1000 power
+	on tick:lose 1000 panelClump
+	cost:900 iron, 800 copper
+	req:(panelClumping)
+*largeClump
+	name:Large Clump
+	desc:It's a clump, but larger. Yeah, you also can't buy these.
+	on tick:yield 1000000 power
+	req:(panelClumping)
 Upgrades
 *panelClumping
 	name:Panel Clumping
